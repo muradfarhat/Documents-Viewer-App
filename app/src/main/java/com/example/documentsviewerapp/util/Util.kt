@@ -15,6 +15,9 @@ object Util {
 
     fun loadDocx(filePath: String): WordprocessingMLPackage {
         val file = File(filePath)
+        if(!file.exists()) {
+            Log.e("File == ", "No File in this path")
+        }
         return WordprocessingMLPackage.load(file)
     }
 

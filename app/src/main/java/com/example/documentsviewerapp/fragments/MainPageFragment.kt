@@ -21,7 +21,7 @@ class MainPageFragment : Fragment() {
     private lateinit var showBtn: Button
     private lateinit var fileRecyclerView: RecyclerView
     private val llManager = LinearLayoutManager(context)
-    private val path = Environment.DIRECTORY_DOCUMENTS
+    private val path = Environment.getExternalStorageDirectory().path
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,8 +67,8 @@ class MainPageFragment : Fragment() {
 
     private fun setRecyclerViewAdapter() {
         fileRecyclerView.layoutManager = llManager
-        Log.e("path == ", path + "/testfile.docx")
-        val docxPackage = Util.loadDocx(path + "/testfile.docx")
+        Log.e("path == ", path + "/DocApp/testfile.docx")
+        val docxPackage = Util.loadDocx(path + "/DocApp/testfile.docx")
         val images = Util.renderDocxToImages(docxPackage)
         fileRecyclerView.adapter = FileAdapter(images)
     }
