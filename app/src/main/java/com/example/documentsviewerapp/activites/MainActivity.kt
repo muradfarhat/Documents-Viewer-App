@@ -1,7 +1,6 @@
 package com.example.documentsviewerapp.activites
 
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.documentsviewerapp.R
