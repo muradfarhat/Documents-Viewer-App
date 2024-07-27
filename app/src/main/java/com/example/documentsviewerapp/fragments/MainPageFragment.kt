@@ -9,15 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.example.documentsviewerapp.R
+import com.example.documentsviewerapp.util.Util
+
 class MainPageFragment : Fragment() {
 
-    val permissions = arrayOf(
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        android.Manifest.permission.READ_EXTERNAL_STORAGE
-    )
-
     private lateinit var showBtn: Button
+    private lateinit var fileRecyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,7 +37,7 @@ class MainPageFragment : Fragment() {
         {
             ActivityCompat.requestPermissions(
                 activity,
-                permissions,
+                Util.permissions,
                 PackageManager.PERMISSION_GRANTED
             )
         } else {
@@ -54,5 +53,6 @@ class MainPageFragment : Fragment() {
 
     private fun initView(view: View) {
         showBtn = view.findViewById(R.id.showBtn)
+        fileRecyclerView = view.findViewById(R.id.filesRecyclerView)
     }
 }

@@ -16,4 +16,9 @@
         android:paddingVertical="@dimen/_15dp"
         android:paddingHorizontal="@dimen/_20dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

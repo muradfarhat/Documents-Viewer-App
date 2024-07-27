@@ -70,4 +70,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation ("org.apache.xmlbeans:xmlbeans:5.1.1")
+    implementation ("org.docx4j:docx4j-core:8.3.3")
+    implementation ("org.apache.poi:poi-ooxml:5.2.3")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("androidx.core:core-ktx:1.10.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 }
