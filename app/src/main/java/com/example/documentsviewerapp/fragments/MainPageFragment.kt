@@ -3,6 +3,7 @@ package com.example.documentsviewerapp.fragments
 import android.os.Bundle
 import android.app.Fragment
 import android.content.pm.PackageManager
+import android.os.Environment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ class MainPageFragment : Fragment() {
     private lateinit var showBtn: Button
     private lateinit var fileRecyclerView: RecyclerView
     private val llManager = LinearLayoutManager(context)
+    private val path = Environment.DIRECTORY_DOCUMENTS
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,7 +65,10 @@ class MainPageFragment : Fragment() {
 
     private fun setRecyclerViewAdapter() {
         fileRecyclerView.layoutManager = llManager
-        fileRecyclerView.adapter = FileAdapter()
+        Log.e("path == ", path + "/testfile.docx")
+        val docxPackage = Util.loadDocx(path + "/testfile.docx")
+        val images = Util.renderDocxToImages(docxPackage)
+        fileRecyclerView.adapter = FileAdapter(images)
     }
 
     private fun elementsVisibility(
