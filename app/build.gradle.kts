@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.documentsviewerapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,6 +47,20 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/NOTICE.md")
+//        exclude("META-INF/LICENSE")
+//        exclude("META-INF/LICENSE.txt")
+//        exclude("META-INF/license.txt")
+//        exclude("META-INF/NOTICE")
+//        exclude("META-INF/NOTICE.txt")
+//        exclude("META-INF/notice.txt")
+//        exclude("META-INF/ASL2.0")
+//        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
@@ -71,10 +85,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation ("org.apache.xmlbeans:xmlbeans:5.1.1")
-    implementation ("org.docx4j:docx4j-core:8.3.3")
-    implementation ("org.apache.poi:poi-ooxml:5.2.3")
-    implementation ("androidx.recyclerview:recyclerview:1.2.1")
-    implementation ("androidx.core:core-ktx:1.10.0")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation("org.apache.xmlbeans:xmlbeans:5.2.1")
+    implementation("org.docx4j:docx4j-core:11.4.9")
+    implementation("org.apache.poi:poi-ooxml:5.3.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
 }

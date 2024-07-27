@@ -53,6 +53,8 @@ class MainPageFragment : Fragment() {
     private fun setClickListeners() {
         showBtn.setOnClickListener {
             askPermissions()
+            setRecyclerViewAdapter()
+            elementsVisibility(View.GONE, View.VISIBLE)
         }
     }
 
