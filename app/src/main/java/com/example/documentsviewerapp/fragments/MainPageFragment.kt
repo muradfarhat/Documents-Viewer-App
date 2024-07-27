@@ -9,14 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.documentsviewerapp.R
+import com.example.documentsviewerapp.adapters.FileAdapter
 import com.example.documentsviewerapp.util.Util
 
 class MainPageFragment : Fragment() {
 
     private lateinit var showBtn: Button
     private lateinit var fileRecyclerView: RecyclerView
+    private val llManager = LinearLayoutManager(context)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,5 +57,20 @@ class MainPageFragment : Fragment() {
     private fun initView(view: View) {
         showBtn = view.findViewById(R.id.showBtn)
         fileRecyclerView = view.findViewById(R.id.filesRecyclerView)
+        setRecyclerViewAdapter()
+        elementsVisibility(View.VISIBLE, View.GONE)
+    }
+
+    private fun setRecyclerViewAdapter() {
+        fileRecyclerView.layoutManager = llManager
+        fileRecyclerView.adapter = FileAdapter()
+    }
+
+    private fun elementsVisibility(
+        btnVisibility: Int,
+        fileVisibility: Int
+    ) {
+        showBtn.visibility = btnVisibility
+        fileRecyclerView.visibility = fileVisibility
     }
 }
