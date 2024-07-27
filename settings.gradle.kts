@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Documents Viewer App"
+rootProject.name = "DocumentsViewerApp"
 include(":app")
  
